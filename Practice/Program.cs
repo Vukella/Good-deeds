@@ -65,9 +65,9 @@ namespace Program
             Console.WriteLine("1. A good deed you did today?");
             Console.WriteLine("2. Something you learned today?");
             Console.WriteLine("3. An idea that needs to be saved somewhere?");
-            Console.WriteLine("4. A confession to write somewhere in order to feel better\n");
-            Console.WriteLine("5. Return to main menu\n");
-            Console.WriteLine("6. Close app\n");
+            Console.WriteLine("4. A confession to write somewhere in order to feel better?\n");
+            Console.WriteLine("5. Return to main menu");
+            Console.WriteLine("6. Close app");
             Console.Write("Enter your choice: ");
         }
         private static void ShowMenuReport()
@@ -125,60 +125,39 @@ namespace Program
                 switch (choice) 
                 {
                     case "1":
+                        Console.Clear();
                         string deed;
-                        Console.WriteLine("\nWrite what good have you done today");
+                        Console.WriteLine("\nWrite what good have you done today\n");
                         deed= Console.ReadLine();
                         Text Deed = new Text(deed);
-                        
-                        using (StreamWriter writer = File.AppendText(filePathDeed)) 
-                        {
-                            writer.WriteLine("------------------------------");
-                            writer.WriteLine(Deed.text);
-                            writer.WriteLine();
-                            writer.WriteLine(Deed.time.ToString());
-                        }
+                        Program.Writting(Deed, filePathDeed);
                         break;
                     case "2":
+                        Console.Clear();
                         string learned;
-                        Console.WriteLine("\nWrite what useful have you learned today");
+                        Console.WriteLine("\nWrite what useful thing have you learned today\n");
                         learned = Console.ReadLine();
                         Text LearnedThing = new Text(learned);
-                        
-                        using (StreamWriter writer = File.AppendText(filePathLearned))
-                        {
-                            writer.WriteLine("------------------------------");
-                            writer.WriteLine(LearnedThing.text);
-                            writer.WriteLine();
-                            writer.WriteLine(LearnedThing.time.ToString());
-                        }
+
+                        Program.Writting(LearnedThing, filePathLearned);
                         break;
                     case "3":
+                        Console.Clear();
                         string idea;
-                        Console.WriteLine("\nWrite what useful have you learned today");
+                        Console.WriteLine("\nAn idea that you want to make in reality some day\n");
                         idea = Console.ReadLine();
                         Text GotAnIdea = new Text(idea);
 
-                        using (StreamWriter writer = File.AppendText(filePathIdea))
-                        {
-                            writer.WriteLine("------------------------------");
-                            writer.WriteLine(GotAnIdea.text);
-                            writer.WriteLine();
-                            writer.WriteLine(GotAnIdea.time.ToString());
-                        }
+                        Program.Writting(GotAnIdea, filePathIdea);
                         break;
                     case "4":
+                        Console.Clear();
                         string confession;
-                        Console.WriteLine("\nWrite what useful have you learned today");
+                        Console.WriteLine("\nLet it all out\n");
                         confession = Console.ReadLine();
                         Text ConfessionThing = new Text(confession);
 
-                        using (StreamWriter writer = File.AppendText(filePathConfession))
-                        {
-                            writer.WriteLine("------------------------------");
-                            writer.WriteLine(ConfessionThing.text);
-                            writer.WriteLine();
-                            writer.WriteLine(ConfessionThing.time.ToString());
-                        }
+                        Program.Writting(ConfessionThing, filePathConfession);
                         break;
                     case "5":
                         Console.Clear();
@@ -209,36 +188,28 @@ namespace Program
                 switch (choice)
                 {
                     case "1":
-                        Console.WriteLine("------------------------------");
-                        Console.WriteLine("Things that you learned so far:\n");
-                        using (StreamReader reader = new StreamReader(filePathDeed))
-                        {
-                            string text = reader.ReadToEnd();
-                            Console.WriteLine(text);
-                        }
-                        break;
-                    case "2":
-                        Console.WriteLine("------------------------------");
-                        Console.WriteLine("Things that you learned so far:\n");
-                        using (StreamReader reader = new StreamReader(filePathLearned))
-                        {
-                            string text = reader.ReadToEnd();
-                            Console.WriteLine(text);
-                        }
-                        break;
-                    case "3":
+                        Console.Clear();
                         Console.WriteLine("------------------------------");
                         Console.WriteLine("Good Things that you did so far:\n");
-                        using (StreamReader reader = new StreamReader(filePathIdea))
-                        {
-                            string text = reader.ReadToEnd();
-                            Console.WriteLine(text);
-                        }
+                        Program.Reading(filePathDeed);
                         break;
-                    case "4":
+                    case "2":
+                        Console.Clear();
                         Console.WriteLine("------------------------------");
                         Console.WriteLine("Things that you learned so far:\n");
-                        
+                        Program.Reading(filePathLearned);
+                        break;
+                    case "3":
+                        Console.Clear();
+                        Console.WriteLine("------------------------------");
+                        Console.WriteLine("Amazing ideas that you wrote here:\n");
+                        Program.Reading(filePathIdea);
+                        break;
+                    case "4":
+                        Console.Clear();
+                        Console.WriteLine("------------------------------");
+                        Console.WriteLine("Confessions written in order to feel better:\n");
+                        Program.Reading(filePathConfession);
                         break;
                     case "5":
                         Console.Clear();
