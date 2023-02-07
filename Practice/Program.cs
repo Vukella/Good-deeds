@@ -23,24 +23,23 @@ namespace Program
             Console.ReadLine();
             Environment.Exit(0);
         }
-        private void Writting(Text Entered, string filePath) 
+        private static void Writting(Text Entered, string filePath) 
         {
-            if (Entered != null) { 
-                using (StreamWriter writer = File.AppendText(filePath))
-                {
-                    writer.WriteLine("------------------------------");
-                    writer.WriteLine(Entered.text);
-                    writer.WriteLine();
-                    writer.WriteLine(Entered.time.ToString());
-                }
+            
+            using (StreamWriter writer = File.AppendText(filePath))
+            {
+                writer.WriteLine("------------------------------");
+                writer.WriteLine(Entered.text);
+                writer.WriteLine();
+                writer.WriteLine(Entered.time.ToString());
             }
         }
 
-            private void Reading(Text Text,string filePath) 
+        private static void Reading(string filePath) 
         {
-            using (StreamReader reader = new StreamReader(filePath)) ;
+            using (StreamReader reader = new StreamReader(filePath)) 
             {
-                string text = reader.readtoend();
+                string text = reader.ReadToEnd();
                 Console.WriteLine(text);
             }
         }
@@ -101,11 +100,11 @@ namespace Program
                         MenuReport();
                         break;
                     case "0":
-                        Console.WriteLine("Continue on making progress!");
-                        Console.ReadLine();
+                        ExitApp();
                         break;
                     default:
-                        ExitApp();
+                        Console.WriteLine("There is some error. Please try again");
+                        Console.Read();
                         break;
 
                 }
@@ -239,11 +238,7 @@ namespace Program
                     case "4":
                         Console.WriteLine("------------------------------");
                         Console.WriteLine("Things that you learned so far:\n");
-                        using (StreamReader reader = new StreamReader(filePathConfession))
-                        {
-                            string text = reader.ReadToEnd();
-                            Console.WriteLine(text);
-                        }
+                        
                         break;
                     case "5":
                         Console.Clear();
@@ -262,6 +257,7 @@ namespace Program
         static void Main(string[] args) 
         {
             MainMenu();
+            
         }
     }
 
