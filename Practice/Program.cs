@@ -100,7 +100,7 @@ namespace Program
                         MenuReport();
                         break;
                     case "0":
-                        ExitApp();
+                        ExitApp(); //Closing the app
                         break;
                     default:
                         Console.WriteLine("There is some error. Please try again");
@@ -112,11 +112,12 @@ namespace Program
         }
         private static void MenuWrite()
         {
+            //Making strings with file paths to every text documents
             string filePathDeed = @"E:\Radovi i materijali\Bitno\C#\Good deed\deeds.txt";
             string filePathLearned = @"E:\Radovi i materijali\Bitno\C#\Good deed\learned.txt";
             string filePathIdea = @"E:\Radovi i materijali\Bitno\C#\Good deed\idea.txt";
             string filePathConfession = @"E:\Radovi i materijali\Bitno\C#\Good deed\confession.txt";
-
+            //Making a switch
             string choice;
             do 
             {
@@ -125,46 +126,47 @@ namespace Program
                 switch (choice) 
                 {
                     case "1":
-                        Console.Clear();
+                        Console.Clear(); //Delete previous console display
                         string deed;
                         Console.WriteLine("\nWrite what good have you done today\n");
                         deed= Console.ReadLine();
                         Text Deed = new Text(deed);
+                        //Adding a function write everything into specific text document
                         Program.Writting(Deed, filePathDeed);
                         break;
                     case "2":
-                        Console.Clear();
+                        Console.Clear(); //Delete previous console display
                         string learned;
                         Console.WriteLine("\nWrite what useful thing have you learned today\n");
                         learned = Console.ReadLine();
                         Text LearnedThing = new Text(learned);
-
+                        //Adding a function write everything into specific text document
                         Program.Writting(LearnedThing, filePathLearned);
                         break;
                     case "3":
-                        Console.Clear();
+                        Console.Clear(); //Delete previous console display
                         string idea;
                         Console.WriteLine("\nAn idea that you want to make in reality some day\n");
                         idea = Console.ReadLine();
                         Text GotAnIdea = new Text(idea);
-
+                        //Adding a function write everything into specific text document
                         Program.Writting(GotAnIdea, filePathIdea);
                         break;
                     case "4":
-                        Console.Clear();
+                        Console.Clear(); //Delete previous console display
                         string confession;
                         Console.WriteLine("\nLet it all out\n");
                         confession = Console.ReadLine();
                         Text ConfessionThing = new Text(confession);
-
+                        //Adding a function write everything into specific text document
                         Program.Writting(ConfessionThing, filePathConfession);
                         break;
                     case "5":
-                        Console.Clear();
-                        MainMenu();
+                        Console.Clear(); //Delete previous console display
+                        MainMenu(); //Return to main menu
                         break;
                     case "6":
-                        ExitApp();
+                        ExitApp(); //Closing the app
                         break;
                     default:
                         Console.WriteLine("There is some error. Please try again");
@@ -188,35 +190,39 @@ namespace Program
                 switch (choice)
                 {
                     case "1":
-                        Console.Clear();
+                        Console.Clear(); //Delete previous console display
                         Console.WriteLine("------------------------------");
                         Console.WriteLine("Good Things that you did so far:\n");
+                        //Adding a function reads everything from specific text document
                         Program.Reading(filePathDeed);
                         break;
                     case "2":
-                        Console.Clear();
+                        Console.Clear(); //Delete previous console display
                         Console.WriteLine("------------------------------");
                         Console.WriteLine("Things that you learned so far:\n");
+                        //Adding a function reads everything from specific text document
                         Program.Reading(filePathLearned);
                         break;
                     case "3":
-                        Console.Clear();
+                        Console.Clear(); //Delete previous console display
                         Console.WriteLine("------------------------------");
                         Console.WriteLine("Amazing ideas that you wrote here:\n");
+                        //Adding a function reads everything from specific text document
                         Program.Reading(filePathIdea);
                         break;
                     case "4":
-                        Console.Clear();
+                        Console.Clear(); //Delete previous console display
                         Console.WriteLine("------------------------------");
                         Console.WriteLine("Confessions written in order to feel better:\n");
+                        //Adding a function reads everything from specific text document
                         Program.Reading(filePathConfession);
                         break;
                     case "5":
-                        Console.Clear();
-                        MainMenu();
+                        Console.Clear(); //Delete previous console display
+                        MainMenu(); //Return to main menu
                         break;
                     case "6":
-                        ExitApp();
+                        ExitApp(); //Closing the app
                         break;
                     default:
                         Console.WriteLine("There is some error. Please try again");
