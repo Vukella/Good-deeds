@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\neman\\source\\repos\\Practice\\Practice\\GoodDeed.csproj": {}
+    "C:\\Users\\neman\\source\\repos\\Good Deed\\Practice\\GoodDeed.csproj": {}
   },
   "projects": {
-    "C:\\Users\\neman\\source\\repos\\Practice\\Practice\\GoodDeed.csproj": {
+    "C:\\Users\\neman\\source\\repos\\Good Deed\\Practice\\GoodDeed.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\neman\\source\\repos\\Practice\\Practice\\GoodDeed.csproj",
+        "projectUniqueName": "C:\\Users\\neman\\source\\repos\\Good Deed\\Practice\\GoodDeed.csproj",
         "projectName": "GoodDeed",
-        "projectPath": "C:\\Users\\neman\\source\\repos\\Practice\\Practice\\GoodDeed.csproj",
+        "projectPath": "C:\\Users\\neman\\source\\repos\\Good Deed\\Practice\\GoodDeed.csproj",
         "packagesPath": "C:\\Users\\neman\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\neman\\source\\repos\\Practice\\Practice\\obj\\",
+        "outputPath": "C:\\Users\\neman\\source\\repos\\Good Deed\\Practice\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

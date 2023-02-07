@@ -1,0 +1,15 @@
+C:\Users\neman\source\repos\Good Deed\Practice\bin\Debug\net6.0\GoodDeed.exe
+C:\Users\neman\source\repos\Good Deed\Practice\bin\Debug\net6.0\GoodDeed.deps.json
+C:\Users\neman\source\repos\Good Deed\Practice\bin\Debug\net6.0\GoodDeed.runtimeconfig.json
+C:\Users\neman\source\repos\Good Deed\Practice\bin\Debug\net6.0\GoodDeed.dll
+C:\Users\neman\source\repos\Good Deed\Practice\bin\Debug\net6.0\GoodDeed.pdb
+C:\Users\neman\source\repos\Good Deed\Practice\obj\Debug\net6.0\GoodDeed.csproj.AssemblyReference.cache
+C:\Users\neman\source\repos\Good Deed\Practice\obj\Debug\net6.0\GoodDeed.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\neman\source\repos\Good Deed\Practice\obj\Debug\net6.0\GoodDeed.AssemblyInfoInputs.cache
+C:\Users\neman\source\repos\Good Deed\Practice\obj\Debug\net6.0\GoodDeed.AssemblyInfo.cs
+C:\Users\neman\source\repos\Good Deed\Practice\obj\Debug\net6.0\GoodDeed.csproj.CoreCompileInputs.cache
+C:\Users\neman\source\repos\Good Deed\Practice\obj\Debug\net6.0\GoodDeed.dll
+C:\Users\neman\source\repos\Good Deed\Practice\obj\Debug\net6.0\refint\GoodDeed.dll
+C:\Users\neman\source\repos\Good Deed\Practice\obj\Debug\net6.0\GoodDeed.pdb
+C:\Users\neman\source\repos\Good Deed\Practice\obj\Debug\net6.0\GoodDeed.genruntimeconfig.cache
+C:\Users\neman\source\repos\Good Deed\Practice\obj\Debug\net6.0\ref\GoodDeed.dll
