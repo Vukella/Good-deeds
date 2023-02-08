@@ -135,7 +135,7 @@ namespace Program
                         break;
                     default:
                         Console.WriteLine("There is some error. Please try again");
-                        Console.Read();
+                        
                         break;
 
                 }
@@ -201,7 +201,7 @@ namespace Program
                         break;
                     default:
                         Console.WriteLine("There is some error. Please try again");
-                        Console.Read();
+                        
                         break;
                 }
             } while (choice != "0");
@@ -260,7 +260,7 @@ namespace Program
                         break;
                     default:
                         Console.WriteLine("There is some error. Please try again");
-                        Console.Read();
+                        
                         break;
                 }
             } while (choice != "0");
