@@ -60,7 +60,6 @@ namespace Program
         {
             Console.WriteLine("---------------------------------------------------------------");
             Console.WriteLine("---------------------------------------------------------------");
-            Console.WriteLine("You picked first option");
             Console.WriteLine("\nWhat do you want to enter:");
             Console.WriteLine("1. A good deed you did today?");
             Console.WriteLine("2. Something you learned today?");
@@ -74,7 +73,6 @@ namespace Program
         {
             Console.WriteLine("---------------------------------------------------------------");
             Console.WriteLine("---------------------------------------------------------------");
-            Console.WriteLine("You picked second option");
             Console.WriteLine("\nWhat report you want:");
             Console.WriteLine("1. Report of all your good deeds?");
             Console.WriteLine("2. Report of all things that you learned in a while?");
@@ -128,7 +126,7 @@ namespace Program
                     case "1":
                         Console.Clear(); //Delete previous console display
                         string deed;
-                        Console.WriteLine("\nWrite what good have you done today\n");
+                        Console.WriteLine("\nWrite what good have you done today:\n");
                         deed= Console.ReadLine();
                         Text Deed = new Text(deed);
                         //Adding a function write everything into specific text document
@@ -137,7 +135,7 @@ namespace Program
                     case "2":
                         Console.Clear(); //Delete previous console display
                         string learned;
-                        Console.WriteLine("\nWrite what useful thing have you learned today\n");
+                        Console.WriteLine("\nWrite what useful thing have you learned today:\n");
                         learned = Console.ReadLine();
                         Text LearnedThing = new Text(learned);
                         //Adding a function write everything into specific text document
@@ -146,7 +144,7 @@ namespace Program
                     case "3":
                         Console.Clear(); //Delete previous console display
                         string idea;
-                        Console.WriteLine("\nAn idea that you want to make in reality some day\n");
+                        Console.WriteLine("\nAn idea that you want to make in reality some day:\n");
                         idea = Console.ReadLine();
                         Text GotAnIdea = new Text(idea);
                         //Adding a function write everything into specific text document
@@ -155,7 +153,7 @@ namespace Program
                     case "4":
                         Console.Clear(); //Delete previous console display
                         string confession;
-                        Console.WriteLine("\nLet it all out\n");
+                        Console.WriteLine("\nLet it all out:\n");
                         confession = Console.ReadLine();
                         Text ConfessionThing = new Text(confession);
                         //Adding a function write everything into specific text document
@@ -212,10 +210,39 @@ namespace Program
                         break;
                     case "4":
                         Console.Clear(); //Delete previous console display
-                        Console.WriteLine("------------------------------");
-                        Console.WriteLine("Confessions written in order to feel better:\n");
-                        //Adding a function reads everything from specific text document
-                        Program.Reading(filePathConfession);
+                        string password;
+                        Console.WriteLine("You need to enter a password for this one");
+                        Console.WriteLine("Password: ");
+                        int chances = 3;
+                        while (chances > 0)
+                        {
+                            
+                            password = Console.ReadLine();
+                            if (password.Equals("Be a better man"))
+                            {
+                                Console.WriteLine("------------------------------");
+                                Console.WriteLine("Confessions written in order to feel better:\n");
+                                //Adding a function reads everything from specific text document
+                                Program.Reading(filePathConfession);
+                                break;
+                            }
+                            else
+                            {
+                                if (chances == 2 || chances == 3)
+                                {
+                                    Console.Clear();
+                                    Console.WriteLine("Looks like you missed a letter. Try again\n");
+                                    Console.WriteLine("Password: ");
+                                }
+                                chances--;
+                            }
+                        }
+                        if (chances == 0)
+                        {
+                            Console.WriteLine("------------------------------");
+                            Console.WriteLine("You clearly aren't allowed to get this report. Stop sniffing into others private stuff");
+                            Environment.Exit(0);
+                        }
                         break;
                     case "5":
                         Console.Clear(); //Delete previous console display
