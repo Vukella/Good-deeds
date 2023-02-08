@@ -17,6 +17,39 @@ namespace Program
     
     class Program
     {
+        private static void Password(string solution)
+        {
+            Console.Clear(); //Delete previous console display
+            string password;
+            Console.WriteLine("You need to enter a password for this one");
+            Console.WriteLine("Password: ");
+            int chances = 3;
+            while (chances > 0)
+            {
+
+                password = Console.ReadLine();
+                if (password.Equals(solution))
+                {   
+                    break;
+                }
+                else
+                {
+                    if (chances == 2 || chances == 3)
+                    {
+                        Console.Clear();
+                        Console.WriteLine("Looks like you missed a letter. Try again\n");
+                        Console.WriteLine("Password: ");
+                    }
+                    chances--;
+                }
+            }
+            if (chances == 0)
+            {
+                Console.WriteLine("------------------------------\n");
+                Console.WriteLine("You clearly aren't allowed to get this report. Stop sniffing into others private stuff\n");
+                Environment.Exit(0);
+            }
+        }
         private static void ExitApp()
         {
             Console.WriteLine("Continue on making progress!");
@@ -180,6 +213,9 @@ namespace Program
             string filePathIdea = @"E:\Radovi i materijali\Bitno\C#\Good deed\idea.txt";
             string filePathConfession = @"E:\Radovi i materijali\Bitno\C#\Good deed\confession.txt";
 
+            string solutionIdea = "A man with bright ideas";
+            string solutionConfession = "Be a better man";
+
             string choice;
             do
             {
@@ -202,47 +238,18 @@ namespace Program
                         Program.Reading(filePathLearned);
                         break;
                     case "3":
-                        Console.Clear(); //Delete previous console display
+                        Program.Password(solutionIdea);
                         Console.WriteLine("------------------------------");
                         Console.WriteLine("Amazing ideas that you wrote here:\n");
                         //Adding a function reads everything from specific text document
                         Program.Reading(filePathIdea);
                         break;
                     case "4":
-                        Console.Clear(); //Delete previous console display
-                        string password;
-                        Console.WriteLine("You need to enter a password for this one");
-                        Console.WriteLine("Password: ");
-                        int chances = 3;
-                        while (chances > 0)
-                        {
-                            
-                            password = Console.ReadLine();
-                            if (password.Equals("Be a better man"))
-                            {
-                                Console.WriteLine("------------------------------");
-                                Console.WriteLine("Confessions written in order to feel better:\n");
-                                //Adding a function reads everything from specific text document
-                                Program.Reading(filePathConfession);
-                                break;
-                            }
-                            else
-                            {
-                                if (chances == 2 || chances == 3)
-                                {
-                                    Console.Clear();
-                                    Console.WriteLine("Looks like you missed a letter. Try again\n");
-                                    Console.WriteLine("Password: ");
-                                }
-                                chances--;
-                            }
-                        }
-                        if (chances == 0)
-                        {
-                            Console.WriteLine("------------------------------");
-                            Console.WriteLine("You clearly aren't allowed to get this report. Stop sniffing into others private stuff");
-                            Environment.Exit(0);
-                        }
+                        Program.Password(solutionConfession);
+                        Console.WriteLine("------------------------------");
+                        Console.WriteLine("Confessions written in order to feel better:\n");
+                        //Adding a function reads everything from specific text document
+                        Program.Reading(filePathConfession);
                         break;
                     case "5":
                         Console.Clear(); //Delete previous console display
