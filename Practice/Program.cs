@@ -26,23 +26,34 @@ namespace Program
             int chances = 3;
             while (chances > 0)
             {
-
+                
                 password = Console.ReadLine();
-                if (password.Equals(solution))
-                {   
-                    break;
+                
+                if(password != null)
+                {
+                    if (password.Equals(solution))
+                    {
+                        break; //returns to case in switch, runs Porgram.Reading
+                    }
+                    else
+                    {
+                        //Displaying message in first and second try
+                        if (chances == 2 || chances == 3)
+                        {
+                            Console.Clear();
+                            Console.WriteLine("Looks like you missed a letter. Try again\n");
+                            Console.WriteLine("Password: ");
+                        }
+                        chances--;
+                    }
                 }
                 else
                 {
-                    if (chances == 2 || chances == 3)
-                    {
-                        Console.Clear();
-                        Console.WriteLine("Looks like you missed a letter. Try again\n");
-                        Console.WriteLine("Password: ");
-                    }
+                    Console.WriteLine("You can't leave question unanswered");
                     chances--;
                 }
             }
+            //If all chances are used the program terminates
             if (chances == 0)
             {
                 Console.WriteLine("------------------------------\n");
@@ -106,11 +117,11 @@ namespace Program
         {
             Console.WriteLine("---------------------------------------------------------------");
             Console.WriteLine("---------------------------------------------------------------");
-            Console.WriteLine("\nWhat report you want:");
-            Console.WriteLine("1. Report of all your good deeds?");
-            Console.WriteLine("2. Report of all things that you learned in a while?");
-            Console.WriteLine("3. Report of all ideas that you came up with?");
-            Console.WriteLine("4. Report of all confessions that you need to write somewhere?\n");
+            Console.WriteLine("\nWhat report do you want:");
+            Console.WriteLine("1. All your good deeds?");
+            Console.WriteLine("2. All things that you learned in a while?");
+            Console.WriteLine("3. All ideas that you came up with?");
+            Console.WriteLine("4. All confessions that you need to write somewhere?\n");
             Console.WriteLine("5. Return to main menu");
             Console.WriteLine("6. Close app");
             Console.Write("Enter your choice: ");
@@ -135,9 +146,7 @@ namespace Program
                         break;
                     default:
                         Console.WriteLine("There is some error. Please try again");
-                        
                         break;
-
                 }
             } while (choice != "0");
         }
@@ -201,7 +210,6 @@ namespace Program
                         break;
                     default:
                         Console.WriteLine("There is some error. Please try again");
-                        
                         break;
                 }
             } while (choice != "0");
@@ -260,7 +268,6 @@ namespace Program
                         break;
                     default:
                         Console.WriteLine("There is some error. Please try again");
-                        
                         break;
                 }
             } while (choice != "0");
