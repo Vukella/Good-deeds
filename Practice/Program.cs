@@ -58,6 +58,7 @@ namespace Program
             {
                 Console.WriteLine("------------------------------\n");
                 Console.WriteLine("You clearly aren't allowed to get this report. Stop sniffing into others private stuff\n");
+                Console.ReadLine();
                 Environment.Exit(0);
             }
         }
