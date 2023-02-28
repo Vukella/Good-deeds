@@ -14,7 +14,89 @@ namespace Program
             time = DateTime.Now;
         }
     }
-    
+
+    internal class User
+    {
+        internal string username;
+        internal string firstName;
+        internal string lastName;
+        internal string email;
+
+        internal string password;
+        private string filepath; //link to user folder in drive
+
+        List<User> users;
+
+        //internal User (string username, string firstName, string lastName, string email, string password, string filepath)
+        //{
+        //    this.username = username;
+        //    this.firstName = firstName;
+        //    this.lastName = lastName;
+        //    this.email = email;
+        //    this.password = password;
+        //    this.filepath = filepath;
+        //}
+        internal User UserSignUp()
+        {
+            User user = new User();
+            //check if there is mail already mail
+            Console.WriteLine("\nEmail: ");
+            user.email = Console.ReadLine();
+
+            Console.WriteLine("\nUsername: ");
+            user.username = Console.ReadLine();
+
+            Console.WriteLine("\nFirst name: ");
+            user.firstName = Console.ReadLine();
+
+            Console.WriteLine("\nLast name: ");
+            user.lastName = Console.ReadLine();
+
+            Console.WriteLine("\nPassword: ");
+            user.password = Console.ReadLine();
+
+            //user.filepath = @"E:\Radovi i materijali\Bitno\C#\Good deed\confession.txt";
+
+            users.Add(user);
+
+            return user;
+        }
+
+        internal void UserLogin(User user)
+        {
+            Console.WriteLine("\nUsername: ");
+            user.username = Console.ReadLine();
+            
+            Console.WriteLine("\nPassword: ");
+            user.password = Console.ReadLine();
+            //check if username i passwords are matching
+        }
+        private static void Saving(User user, string filePath)
+        {
+            DateTime now = DateTime.Now;
+            using (StreamWriter writer = File.AppendText(filePath))
+            {
+                writer.WriteLine("------------------------------");
+                writer.WriteLine(user.email);
+                writer.WriteLine(user.username);
+                writer.WriteLine(user.firstName + " " + user.lastName);
+                writer.WriteLine(user.password);
+                writer.WriteLine();
+                writer.WriteLine(now.ToString());
+            }
+        }
+
+        private static void Report(string filePath)
+        {
+            using (StreamReader reader = new StreamReader(filePath))
+            {
+                string text = reader.ReadToEnd();
+                Console.WriteLine(text);
+            }
+        }
+    }
+
+
     class Program
     {
         private static void Password(string solution)
@@ -88,8 +170,19 @@ namespace Program
                 Console.WriteLine(text);
             }
         }
+        private static void ShowLoginMenu()
+        {
+            Console.WriteLine("---------------------------------------------------------------");
+            Console.WriteLine("---------------------------------------------------------------");
+            Console.WriteLine("Welcome to Good deed!");
 
-        private static void ShowFirstMenu()
+            Console.WriteLine("1. Login");
+            Console.WriteLine("2. Sign up");
+            Console.WriteLine("0. Exit menu\n");
+            Console.Write("Enter your choice: ");
+
+        }
+        private static void ShowWelcomeMenu()
         {
             Console.WriteLine("---------------------------------------------------------------");
             Console.WriteLine("---------------------------------------------------------------");
@@ -132,7 +225,32 @@ namespace Program
             string choice;
             do
             {
-                ShowFirstMenu();
+                ShowLoginMenu();
+                choice = Console.ReadLine();
+                switch (choice)
+                {
+                    case "1":
+                        //MenuLogin();
+                        break;
+                    case "2":
+                        //User user = MenuSignUp();
+                        break;
+                    case "0":
+                        ExitApp(); //Closing the app
+                        break;
+                    default:
+                        Console.WriteLine("There is some error. Please try again");
+                        break;
+                }
+            } while (choice != "0");
+        }
+        
+        private static void WelcomeMenu()
+        {
+            string choice;
+            do
+            {
+                ShowWelcomeMenu();
                 choice = Console.ReadLine();
                 switch (choice) 
                 {
@@ -151,6 +269,7 @@ namespace Program
                 }
             } while (choice != "0");
         }
+        
         private static void MenuWrite()
         {
             //Making strings with file paths to every text documents
